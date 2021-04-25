@@ -1,0 +1,86 @@
+.footer {
+    padding: 300px  0 100px 0;
+    @include point(800) {
+        padding: 200px  0 50px 0;
+        }
+    @include point(500) {
+        padding: 100px  0 25px 0;
+    }
+    &__inner {
+        margin: 0 auto;
+        max-width: 650px;
+        h2 {
+            font-size: 50px;
+            text-align: center;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+                @include point(800) {
+                    font-size: 30px;
+                    margin-bottom: 10px;
+                    }
+                @include point(500) {
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+        }
+        p {
+            font-size: 27px;
+            font-weight: 300;
+            line-height: 1.2;
+            color: $gray;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+        form {
+            margin: 50px auto 0 auto;
+            max-width: 600px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            column-gap: 40px;
+            @include point(580) {
+                grid-template: 1fr 1fr / 1fr;
+                row-gap: 20px;
+            }
+            input {
+                padding: 10px 25px;
+                display: inline-block;
+                color: $gray;
+                width: 100%;
+                border: 2px solid $whB;
+                border-radius: 100px;
+                font-size: 20px;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 300;
+                &::placeholder {
+                    color: $gray;
+                    font-size: 20px;
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 300;
+                    opacity: .5;
+                }
+            }
+            button {
+                padding: 10px 25px;
+                display: inline-block;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 300;
+                font-size: 20px;
+                line-height: 27px;
+                color: $white;
+                text-align: center;
+                background: $accent;
+                border-radius: 100px;
+                border: 2px solid $accent;
+                box-shadow: 0px 30px 50px 0px rgba($accent, 0.3);
+                outline: none;
+                cursor: pointer;
+                transition: .2s linear;
+                &:hover {
+                    color: $accent;
+                    background: transparent;
+                }
+            }
+        }
+    }
+}

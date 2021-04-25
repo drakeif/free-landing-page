@@ -1,0 +1,189 @@
+.header {
+    padding-bottom: 200px;
+    position: relative;
+    overflow: hidden;
+    &--decore {
+        position: absolute;
+        top: -880px;
+        left: 40%;
+        z-index: -1;
+        width: 2619px;
+        height: 2430px;
+        @include point(800) {
+           display: none;
+        }
+    }
+    &__top {
+        padding-top: 55px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include point(800) {
+            padding-top: 10px;
+        }
+        a:first-child {
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: $dark;
+            font-size: 30px;
+            font-weight: 900;
+            line-height: 41px;
+        }
+        a:last-child {
+            padding: 7px 30px;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 27px;
+            color: $white;
+            text-align: center;
+            background: transparent;
+            border-radius: 100px;
+            border: 2px solid $white;
+            outline: none;
+            cursor: pointer;
+            @include point(800) {
+                border: 2px solid $accent;
+                box-shadow: 0px 30px 50px 0px rgba($accent, 0.3);
+                color: $accent;
+            }
+        }
+    }
+    &__middle {
+        margin-top: 250px;
+        @include point(800) {
+            margin-top: 100px;
+        }
+        @include point(580) {
+            margin-top: 60px;
+        }
+        &-inner {
+            max-width: 700px;
+            h1 {
+                font-size: 75px;
+                font-weight: 900;
+                color: $dark;
+                line-height: 1.29;
+                margin-bottom: 20px;
+                @include point(800) {
+                    font-size: 40px;
+                }
+            }
+            p {
+                max-width: 80%;
+                color: $gray;
+                font-size: 20px;
+                font-weight: 300;
+                line-height: 1.75;
+                @include point(580) {
+                    font-size: 15px;
+                }
+            }
+            form {
+                margin-top: 50px;
+                max-width: 600px;
+                display: grid;
+                grid-template-columns: 1fr auto;
+                column-gap: 40px;
+                @include point(580) {
+                    grid-template: 1fr 1fr / 1fr;
+                    row-gap: 20px;
+                }
+                input {
+                    padding: 10px 25px;
+                    display: inline-block;
+                    color: $gray;
+                    width: 100%;
+                    border: 2px solid $whB;
+                    border-radius: 100px;
+                    font-size: 20px;
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 300;
+                    &::placeholder {
+                        color: $gray;
+                        font-size: 20px;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 300;
+                        opacity: .5;
+                    }
+                }
+                button {
+                    padding: 10px 25px;
+                    display: inline-block;
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 300;
+                    font-size: 20px;
+                    line-height: 27px;
+                    color: $white;
+                    text-align: center;
+                    background: $accent;
+                    border-radius: 100px;
+                    border: 2px solid $accent;
+                    box-shadow: 0px 30px 50px 0px rgba($accent, 0.3);
+                    outline: none;
+                    cursor: pointer;
+                    transition: .2s linear;
+                    &:hover {
+                        color: $accent;
+                        background: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+.icons {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 70px;
+    @include point(800) {
+        margin-top: 100px;
+    }
+    @include point(580) {
+        margin-top: 60px;
+        row-gap: 20px;
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        img {
+            min-width: 0;
+        }
+        img + img {
+            margin-left: 30px;
+        }
+    }
+}
+//ANIMATION
+.svg-animate-box {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+[data-aos="c-rotate"] {
+    opacity: 0;
+    transform: translateY(700px) rotate(500deg);
+    transform-box: fill-box;
+    transform-origin: center;
+    transition-property: transform, opacity;
+
+    &.aos-animate {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+}
+[data-aos="fill-right"] {
+    transform: scaleX(0);
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: left;
+
+    &.aos-animate {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}

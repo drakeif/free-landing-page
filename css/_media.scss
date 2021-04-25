@@ -1,0 +1,26 @@
+@mixin media($point) {
+    @if $point == lg {
+        @media only screen and (max-width: 992px) {@content;}
+    }
+    @else if $point == md {
+        @media only screen and (max-width: 768px) {@content;}
+    }
+    @else if $point == sm {
+        @media only screen and (max-width: 576px) {@content;}
+    }
+    @else if $point == xs {
+        @media only screen and (max-width: 500px) {@content;}
+    }
+} 
+
+@mixin point($width) {
+    @media only screen and (max-width: $width + "px") {
+        @content;
+    }
+}
+
+@mixin point-min($width) {
+    @media only screen and (min-width: $width + "px") {
+        @content;
+    }
+}
